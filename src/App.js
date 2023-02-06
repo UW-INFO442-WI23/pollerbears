@@ -1,4 +1,3 @@
-/* React Router goes here */
 import HomeScreen from "../src/components/Home";
 
 
