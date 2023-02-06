@@ -2,7 +2,7 @@
 
 ## Our Mission 
 
-The goal of this application is to inform and foster a culture of curiosity for King County, Washington residents about new bills to invite civic action and higher voter turnout. 
+The goal of this application is to inform and foster a culture of curiosity for King County, Washington residents about new bills to invite civic action and higher voter turnout. It will include translated, readable versions of complex bills into Layman's terms for the average reader to understand. This will lead to increased awareness of and engagement with current issues at the County level.
 
 This solution exists specifically to address the United Nations 16th Sustainable Devleopement Goal of Peace, Justice, and Strong Institutions.
 
