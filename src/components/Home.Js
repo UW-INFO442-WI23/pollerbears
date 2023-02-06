@@ -5,8 +5,8 @@ import React from 'react'
 // We will have a search and filter function in the home page to sort through bills.
 export default function HomeScreen(props){
     return(
-        <div id="test">
-            This is some text to render
+        <div>
+
         </div>
     );
 }

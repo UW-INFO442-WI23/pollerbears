@@ -36,15 +36,3 @@ const db = getFirestore(app);
 //let test = document.getElementById(`test`)
 
 // Attach an asynchronous callback to read the data at our posts reference
-
-/*
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  }, */ //Removed this from package.json because it was making it difficult to test things.
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(
-      <App />
-  );
