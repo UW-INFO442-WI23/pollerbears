@@ -15,7 +15,7 @@ This solution exists specifically to address the United Nations 16th Sustainable
 * King County resident user verification
 * Links to King County government website to review bills in detail 
 
-# GitHub Pages
+## GitHub Pages
 
 The published site can be viewed here: [insert later]
 
