@@ -2,13 +2,34 @@
 
 ## Our Mission 
 
-The goal of this application is to address
+The goal of this application is to inform and foster a culture of curiosity for King County, Washington residents about new bills to invite civic action and higher voter turnout. 
+
+This solution exists specifically to address the United Nations 16th Sustainable Devleopement Goal of Peace, Justice, and Strong Institutions.
 
 ## Features
 
-* a
-* b
-* c
+* Home Page of all King County Bills 
+* Realtime poll for each bill, described in Layman's terms 
+* Visualization of vote distribution
+* Comment section for each bill for discourse around the bill
+* King County resident user verification
+* Links to King County government website to review bills in detail 
+
+# GitHub Pages
+
+The published site can be viewed here: [insert later]
+
+## Group Members
+
+* Grackie Jiang
+* Samir Ouijdani
+* Jackie Hsu
+* Jonathan Prasetyo
+* Iverson Li
+
+# Development Instructions
+
+add more here later 
 
 # Getting Started with Create React App
 
@@ -80,3 +101,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# References
+
+Government bills sourced from King County website
