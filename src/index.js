@@ -1,6 +1,15 @@
 // Import the functions you need from the SDKs you need
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.js';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getFirestore} from "firebase/firestore";
+import { getDatabase, ref, onValue} from "firebase/database";
+
+
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,7 +29,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-//import the function from the realtime database module
-import { getDatabase } from 'firebase/database';
 // Get a reference to the database service
-const db = getDatabase();
+const db = getFirestore(app);
+
+//const billRef = collection(db, "Bills");
+//let test = document.getElementById(`test`)
+
+// Attach an asynchronous callback to read the data at our posts reference
+
+/*
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  }, */ //Removed this from package.json because it was making it difficult to test things.
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+      <App />
+  );
