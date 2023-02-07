@@ -1,0 +1,52 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: auto;
+}
+.homepageHeading{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+.card {
+    width: 30rem;
+    height: 6rem;
+    background-color: white;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .icon-comment {
+    color: #333;
+  }
+  
+  .icon-scroll {
+    color: #333;
+  }
+  
+  .icon-vote {
+    color: #333;
+  }
+  
