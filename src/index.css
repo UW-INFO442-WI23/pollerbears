@@ -49,4 +49,66 @@
   .icon-vote {
     color: #333;
   }
-  
+
+/* Navbar styling */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  background-image: linear-gradient(15deg, blue 0%, red 100%);
+}
+
+.logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 35px;
+  color: white;
+  padding-left: 20px;
+}
+
+.nav-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav-ul a {
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.hamburger {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+/* Size Styling */
+@media screen and (max-width: 767px) {
+  .nav-ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    padding-right: 10px;
+  }
+}

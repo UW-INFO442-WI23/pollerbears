@@ -1,9 +1,11 @@
-import HomeScreen from "../src/components/Home";
-import "./index.css"
+import HomeScreen from "./components/Home";
+import NavBar from "../src/components/Nav";
+import "./index.css";
 
 function App(props){
     return(
         <div>
+          <NavBar/>
           <HomeScreen/>
         </div>
     );
