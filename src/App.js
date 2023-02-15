@@ -1,5 +1,5 @@
 import HomeScreen from "./components/Home";
-import NavBar from "../src/components/Nav";
+import { NavBar, Footer } from "../src/components/Nav";
 import "./index.css";
 
 function App(props){
@@ -7,6 +7,7 @@ function App(props){
         <div>
           <NavBar/>
           <HomeScreen/>
+          <Footer/>
         </div>
     );
 }
