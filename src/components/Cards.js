@@ -7,11 +7,6 @@ const Card = ({ title }) => {
   return (
     <div className="card">
       <h3 className="card-title">{title}</h3>
-      <div className="card-icons">
-        <FontAwesomeIcon icon={faComment} className="icon icon-comment" />
-        <FontAwesomeIcon icon={faScroll} className="icon icon-scroll" />
-        <FontAwesomeIcon icon={faVoteYea} className="icon icon-vote" />
-      </div>
     </div>
   );
 };

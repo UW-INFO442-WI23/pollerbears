@@ -1,3 +1,4 @@
+/*Homepage card styling*/
 .cardContainer{
     display: flex;
     flex-direction: column;
@@ -13,7 +14,7 @@
     font-size: 2rem;
 }
 .card {
-    width: 30rem;
+    width: 50rem;
     height: 6rem;
     background-color: white;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
@@ -32,24 +33,51 @@
     justify-content: space-between;
     width: 100%;
   }
-  
-  .icon {
-    width: 3rem;
-    height: 3rem;
-  }
-  
-  .icon-comment {
-    color: #333;
-  }
-  
-  .icon-scroll {
-    color: #333;
-  }
+
   
   .icon-vote {
     color: #333;
   }
+/* Filter styling */
+.filter-container {
+  position: relative;
+}
 
+.icon-filter{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  left: 4rem;
+  top: 15rem;
+}
+
+.checkbox-container {
+  position: absolute;
+  top: 20rem;
+  left: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: large;  
+}
+input[type="checkbox"] {
+  margin-bottom: 2rem;
+}
+.bill-type-dropdown{
+  top:12rem;
+  position: absolute;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-heading{
+  position: relative;
+  font-size: x-large;
+  font-weight: bolder;
+  left: 8rem;
+  top: 15rem;
+}
 /* Navbar styling */
 nav {
   display: flex;
