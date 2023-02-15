@@ -1,5 +1,5 @@
 import HomeScreen from "./components/Home";
-import NavBar from "../src/components/Nav";
+import { NavBar, Footer } from "../src/components/Nav";
 import Filter from "./components/Filter";
 import "./index.css";
 
@@ -9,6 +9,7 @@ function App(props){
           <NavBar/>
           <Filter />
           <HomeScreen/>
+          <Footer/>
         </div>
     );
 }

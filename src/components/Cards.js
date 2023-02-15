@@ -7,6 +7,9 @@ const Card = ({ title }) => {
   return (
     <div className="card">
       <h3 className="card-title">{title}</h3>
+      <div className="card-icons">
+        <div className="poll-graph"></div>
+      </div>
     </div>
   );
 };

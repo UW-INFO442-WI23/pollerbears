@@ -71,6 +71,15 @@ input[type="checkbox"] {
   flex-direction: column;
 }
 
+/* Graph styling */
+.poll-graph {
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 360px;
+  height: 25px;
+  background: linear-gradient(90deg, #88E93C 60%, #FF5F5F 40%);
+}
+
 .filter-heading{
   position: relative;
   font-size: x-large;
@@ -78,22 +87,73 @@ input[type="checkbox"] {
   left: 8rem;
   top: 15rem;
 }
-/* Navbar styling */
+/* Navbar and Footer styling */
 nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
-  background-image: linear-gradient(15deg, blue 0%, red 100%);
+  background: linear-gradient(90deg, rgba(237, 12, 52, 0.72) 29.66%, rgba(56, 0, 198, 0.6) 70.77%);;
+  
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(237, 12, 52, 0.72) 29.66%, rgba(56, 0, 198, 0.6) 70.77%);;
+}
+
+.footer-icon {
+  height: 100px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.left-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
 }
 
 .logo {
-  font-family: 'Nunito Sans', sans-serif;
-  font-family: 'Raleway', sans-serif;
-  font-size: 35px;
+  display: flex;
+  width: 193px;
+  height: 66px;
+  left: 41px;
+  top: 33px;
+
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
   color: white;
-  padding-left: 20px;
+}
+
+.slogan {
+  display: flex;
+  width: 229px;
+  height: 37px;
+  left: 41px;
+  top: 99px;
+
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: white;
 }
 
 .nav-ul {
