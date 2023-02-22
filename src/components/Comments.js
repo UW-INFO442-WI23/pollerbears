@@ -27,7 +27,7 @@ const Comments = () => {
       <h2>Comments</h2>
       <div className="comment-input-container">
         <img className="comment-profile-pic" src="https://via.placeholder.com/50x50" alt="Profile Pic" />
-        <input
+        <textarea
           type="text"
           placeholder="Add a comment..."
           value={newComment}

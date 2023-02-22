@@ -234,6 +234,33 @@ footer {
   font-size: 1rem;
 }
 
+.comment-input-container {
+  padding: 10px;
+}
+
+.comment-profile-pic {
+  vertical-align:top
+}
+
+textarea[type=text] {
+  margin-left: 10px;
+  height: 100px;
+  width: 300px;
+  position: relative;
+  left: 0;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0, 0, 0, .15);
+  background-color: white;
+  font-size: 16px;
+}
+
+button {
+  height: 30px;
+  vertical-align:top;
+
+}
+
 
 /* Size Styling */
 @media screen and (max-width: 767px) {
