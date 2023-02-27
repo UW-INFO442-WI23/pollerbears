@@ -53,7 +53,7 @@ function App() {
           {loader === false && (data.map((bill) => {
             if (bill.id === selectedBill) { // filter bills by selected bill id
               return (
-                <UniqueBill key={bill.id} billTitle={bill.title} billText={bill.bill} handleBackClick={handleBackClick} />
+                <UniqueBill key={bill.id} billId={bill.id} billTitle={bill.title} billText={bill.bill} handleBackClick={handleBackClick} />
               );
             }
           }))}

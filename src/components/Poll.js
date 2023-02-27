@@ -1,15 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from '../index';
 
 function Poll(props) {
-  const [yesVotes, setYesVotes] = useState(48);
-  const [noVotes, setNoVotes] = useState(52);
+  const { billId } = props;
+  const [yesVotes, setYesVotes] = useState(0);
+  const [noVotes, setNoVotes] = useState(0);
+
+  useEffect(() => {
+    const db = firebase.firestore();
+    const billRef = db.collection("Bills").doc(billId);
+
+    billRef.get().then((doc) => {
+      if (doc.exists) {
+        const data = doc.data();
+        setYesVotes(data.likes || 0);
+        setNoVotes(data.dislikes || 0);
+      } else {
+        console.log("No such document!");
+      }
+    }).catch((error) => {
+      console.log("Error getting document:", error);
+    });
+  }, [billId]);
 
   const handleYesClick = () => {
-    setYesVotes(yesVotes + 1);
+    const db = firebase.firestore();
+    const billRef = db.collection("Bills").doc(billId);
+
+    billRef.update({
+      likes: yesVotes + 1,
+    }).then(() => {
+      setYesVotes(yesVotes + 1);
+    }).catch((error) => {
+      console.error("Error updating document: ", error);
+    });
   };
 
   const handleNoClick = () => {
-    setNoVotes(noVotes + 1);
+    const db = firebase.firestore();
+    const billRef = db.collection("Bills").doc(billId);
+
+    billRef.update({
+      dislikes: noVotes + 1,
+    }).then(() => {
+      setNoVotes(noVotes + 1);
+    }).catch((error) => {
+      console.error("Error updating document: ", error);
+    });
   };
 
   const totalVotes = yesVotes + noVotes;
