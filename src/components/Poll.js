@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 function Poll(props) {
-  const [yesVotes, setYesVotes] = useState(0);
-  const [noVotes, setNoVotes] = useState(0);
+  const [yesVotes, setYesVotes] = useState(48);
+  const [noVotes, setNoVotes] = useState(52);
 
   const handleYesClick = () => {
     setYesVotes(yesVotes + 1);
