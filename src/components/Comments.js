@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const Comments = () => {
   const [commentList, setCommentList] = useState([
-    { username: 'John', profilePic: 'https://via.placeholder.com/50x50', comment: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { username: 'Jane', profilePic: 'https://via.placeholder.com/50x50', comment: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.' },
-    { username: 'Alex', profilePic: 'https://via.placeholder.com/50x50', comment: 'Ut enim ad minima veniam, quis nostrum exercitationem ullam.' },
+    { username: 'John', profilePic: 'https://via.placeholder.com/50x50', comment: 'Absolutely in support of this bill!' },
+    { username: 'Jane', profilePic: 'https://via.placeholder.com/50x50', comment: 'I\'m kind of hesitant about this one, but I\'ll have to do more research.' },
+    { username: 'Alex', profilePic: 'https://via.placeholder.com/50x50', comment: 'Voting yes immediately.' },
   ]);
 
   const [newComment, setNewComment] = useState('');
