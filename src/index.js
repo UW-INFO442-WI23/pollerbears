@@ -3,9 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.js';
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore} from "firebase/firestore";
-import { getDatabase, ref, onValue} from "firebase/database";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 
 
 
@@ -25,17 +24,15 @@ const firebaseConfig = {
   measurementId: "G-QFN3KFZYKD"
 };
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <App />
+);
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+firebase.initializeApp(firebaseConfig);
 
-// Get a reference to the database service
-const db = getFirestore(app);
-
-//const billRef = collection(db, "Bills");
-//let test = document.getElementById(`test`)
-
-// Attach an asynchronous callback to read the data at our posts reference
+export default firebase
 
 /*
   "eslintConfig": {
@@ -44,7 +41,3 @@ const db = getFirestore(app);
       "react-app/jest"
     ]
   }, */ //Removed this from package.json because it was making it difficult to test things.
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(
-      <App />
-  );

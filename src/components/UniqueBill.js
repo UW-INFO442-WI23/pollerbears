@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LoremIpsum } from 'react-lorem-ipsum';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +6,7 @@ import Comments from './Comments';
 import Poll from './Poll';
 
 function UniqueBill(props) {
-  const { billTitle, handleBackClick } = props;
+  const { billTitle, billText, key, handleBackClick } = props;
   const [pollData, setPollData] = useState({ yes: 0, no: 0 });
 
   const handlePollClick = (option) => {
@@ -20,7 +20,7 @@ function UniqueBill(props) {
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
         <h2>{billTitle}</h2>
-        <LoremIpsum p={2} />
+        <p>{billText}</p>
       </div>
       <Poll pollData={pollData} handlePollClick={handlePollClick} />
       <Comments billTitle={billTitle} />
