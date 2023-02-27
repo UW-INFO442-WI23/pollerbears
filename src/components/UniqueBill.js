@@ -6,7 +6,7 @@ import Comments from './Comments';
 import Poll from './Poll';
 
 function UniqueBill(props) {
-  const { billTitle, billText, key, handleBackClick } = props;
+  const { billTitle, billText, handleBackClick } = props;
   const [pollData, setPollData] = useState({ yes: 0, no: 0 });
 
   const handlePollClick = (option) => {
@@ -16,7 +16,7 @@ function UniqueBill(props) {
   return (
     <div>
       <div className="uniqueBillHeader">
-        <button className="backButton" onClick={handleBackClick}>
+        <button className="button" onClick={handleBackClick}>
           <FontAwesomeIcon icon={faArrowLeft} />
         </button>
         <h2>{billTitle}</h2>

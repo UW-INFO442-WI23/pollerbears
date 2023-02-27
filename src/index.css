@@ -1,10 +1,38 @@
+/*Unique Bill Styling */
+.uniqueBillHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.uniqueBillHeader h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.uniqueBillHeader p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
 /*Homepage card styling*/
 .cardContainer{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding-top: 10rem;
     margin-top: auto;
 }
 .homepageHeading{
@@ -182,6 +210,7 @@ footer {
   justify-content: center;
   align-items: center;
   background: linear-gradient(90deg, rgba(237, 12, 52, 0.72) 29.66%, rgba(56, 0, 198, 0.6) 70.77%);;
+  padding-top: 0.5rem;
 }
 
 .footer-icon {
@@ -263,10 +292,15 @@ footer {
   outline: none;
 }
 /* Comments Styling */
+.comment-section {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .comment-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .comment {
@@ -280,15 +314,16 @@ footer {
   height: 3rem;
   border-radius: 50%;
   margin-right: 1rem;
+  margin-top: -0.5rem;
 }
 
-.comment-content {
+.comment-details {
   display: flex;
   flex-direction: column;
   background-color: #f5f5f5;
   padding: 1rem;
   border-radius: 1rem;
-  max-width: 30rem;
+  max-width: 100%;
 }
 
 .comment-header {
@@ -300,6 +335,7 @@ footer {
 .comment-username {
   font-weight: bold;
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .comment-timestamp {
@@ -312,32 +348,45 @@ footer {
 }
 
 .comment-input-container {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
 }
 
 .comment-profile-pic {
-  vertical-align:top
+  vertical-align: top;
+  margin-right: 1rem;
+  margin-top: -0.5rem;
 }
 
 textarea[type=text] {
-  margin-left: 10px;
+  margin-left: 1rem;
   height: 100px;
-  width: 300px;
-  position: relative;
-  left: 0;
+  width: 100%;
   outline: none;
   border: 1px solid #cdcdcd;
   border-color: rgba(0, 0, 0, .15);
   background-color: white;
   font-size: 16px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 button {
-  height: 30px;
-  vertical-align:top;
-
+  background-color: #16191e;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  margin-left: 1rem;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
+button:hover {
+  background-color: #a811e8;
+}
 
 /* Size Styling */
 @media screen and (max-width: 767px) {
