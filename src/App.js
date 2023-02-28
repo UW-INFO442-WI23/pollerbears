@@ -3,6 +3,7 @@ import HomeScreen from './components/Home';
 import { NavBar, Footer } from './components/Nav';
 import UniqueBill from './components/UniqueBill';
 import firebase from './index'
+import { GoogleAuthProvider } from "firebase/auth";
 import './index.css';
 
 function App() {
@@ -41,6 +42,22 @@ function App() {
 
   const handleBackClick = () => {
     setShowUniqueBill(false);
+  };
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle errors here
+        console.log(error);
+      });
   };
 
   return (

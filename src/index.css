@@ -201,6 +201,17 @@ nav {
   background: linear-gradient(90deg, rgba(237, 12, 52, 0.72) 29.66%, rgba(56, 0, 198, 0.6) 70.77%);;
   
 }
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.profile-photo-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
 
 footer {
   position: relative;
