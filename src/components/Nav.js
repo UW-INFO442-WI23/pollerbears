@@ -1,6 +1,7 @@
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import firebase from "firebase/compat/app";
 
 function hamClick() {
@@ -79,7 +80,12 @@ export function NavBar() {
         </button>
 
         <ul className="nav-ul" id="nav-ul">
-          <a href="#About">About</a>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/About">About</Link>
+          </li>
           {currentUser && (
             <img
               className="profile-photo-small"
