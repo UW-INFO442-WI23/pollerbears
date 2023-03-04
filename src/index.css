@@ -283,11 +283,11 @@ footer {
   padding: 0;
 }
 
-.nav-ul a {
+.nav-ul li {
   text-align: center;
   color: white;
   padding: 10px 20px;
-  text-decoration: none;
+  list-style: none;
 }
 
 .hamburger {
@@ -302,6 +302,21 @@ footer {
 .hamburger:focus {
   outline: none;
 }
+
+/* About Styling */
+.about {
+  text-align: center;
+  font-family: 'Source Sans Pro';
+  margin: 50px;
+}
+
+.about h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  color: #EE1F44;
+}
+
 /* Comments Styling */
 .comment-section {
   max-width: 80%;

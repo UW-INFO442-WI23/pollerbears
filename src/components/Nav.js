@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import Profile from './Profile';
+import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import firebase from "firebase/compat/app";
 
 function hamClick() {
   const navUL = document.getElementById("nav-ul");
@@ -66,16 +68,18 @@ export function NavBar({ user }){
           <i className="fas fa-bars"></i>
         </button>
         <ul className="nav-ul" id="nav-ul">
-          <a href="#About">About</a>
-          {userData && (
-            <>
-              <a href="#Profile" onClick={handleProfileClick}>
-                Profile
-              </a>
-              <a href="#SignOut" onClick={handleSignOut}>
-                Sign out
-              </a>
-            </>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/About">About</Link>
+          </li>
+          {currentUser && (
+            <img
+              className="profile-photo-small"
+              src={currentUser.photoURL}
+              alt="User profile"
+            />
           )}
         </ul>
       </nav>
