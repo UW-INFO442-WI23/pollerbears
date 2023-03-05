@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
-import firebase from "firebase/compat/app";
+import { Link } from "react-router-dom";
 
 function hamClick() {
   const navUL = document.getElementById("nav-ul");
   navUL.classList.toggle("show");
-};
+}
 
-export function NavBar({ user }){
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [userData, setUserData] = useState(null); // Add this line
+export function NavBar({ user, setUser }) {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    if (user) {
+      const { displayName, email, photoURL } = user;
+      setUserData({ name: displayName, email, photoURL });
+    }
+  }, [user]);
 
   const handleGoogleSignIn = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -27,9 +31,8 @@ export function NavBar({ user }){
         // Set the user state and close the profile
         const { displayName, email, photoURL } = user;
         console.log(user);
-        setUserData({ name: displayName, email, photoURL }); // Change setUser to setUserData
-
-        setIsProfileOpen(false);
+        setUserData({ name: displayName, email, photoURL });
+        setUser(user);
       })
       .catch((error) => {
         // Handle sign-in errors
@@ -39,23 +42,21 @@ export function NavBar({ user }){
 
   const handleSignOut = () => {
     firebase.auth().signOut();
-    setIsProfileOpen(false); // add this line
-  };
-
-  const handleProfileClick = () => {
-    setIsProfileOpen(true);
+    setUser(null);
+    setUserData(null);
   };
 
   return (
     <header>
       <nav>
         {userData ? (
-          <div className="profile-wrapper" onClick={handleProfileClick}>
+          <div className="profile-wrapper">
             <img
               className="profile-photo-small"
               src={userData.photoURL}
               alt="user profile"
             />
+            <button onClick={handleSignOut}>Sign Out</button>
           </div>
         ) : (
           <button onClick={handleGoogleSignIn}>Sign in with Google</button>
@@ -74,29 +75,33 @@ export function NavBar({ user }){
           <li>
             <Link to="/About">About</Link>
           </li>
-          {currentUser && (
-            <img
-              className="profile-photo-small"
-              src={currentUser.photoURL}
-              alt="User profile"
-            />
+          {userData && (
+            <li>
+              <Link to="/Profile">Profile</Link>
+            </li>
           )}
         </ul>
       </nav>
-      {isProfileOpen && <Profile user={userData} setIsProfileOpen={setIsProfileOpen} />} {/* Change user to userData */}
     </header>
   );
-};
+}
 
 export default NavBar;
-
 
 export function Footer() {
   return (
     <footer>
       <div>
-        <img className="footer-icon" src="./img/polar.png" alt="polar bear icon." />
-        <img className="footer-icon" src="./img/king.png" alt="king county logo." />
+        <img
+          className="footer-icon"
+          src="./img/polar.png"
+          alt="polar bear icon."
+        />
+        <img
+          className="footer-icon"
+          src="./img/king.png"
+          alt="king county logo."
+        />
       </div>
     </footer>
   );

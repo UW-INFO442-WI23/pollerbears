@@ -1,56 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import firebase from '../index'
+import firebase from '../index';
 
 const Comments = () => {
+  const ref = firebase.firestore().collection('Comments');
+  const [data, setdata] = useState([]);
+  const [loader, setloader] = useState(true);
+  const [commentList, setCommentList] = useState([]);
 
-  const ref = firebase.firestore().collection("Comments")
-  const [data, setdata] = useState([])
-  const [loader, setloader] = useState(true)
-  
-  function getData(){
-  
-    ref.onSnapshot(querySnapshot => {
-      const comments = []
+  function getData() {
+    ref.onSnapshot((querySnapshot) => {
+      const comments = [];
       querySnapshot.forEach((doc) => {
-        comments.push(doc.data())
-      })
-      setdata(comments)
-      setloader(false)
-    })
+        comments.push(doc.data());
+      });
+      setdata(comments);
+      setloader(false);
+      const newComments = comments.map((newComment) => ({
+        username: newComment.username,
+        profilePic: 'https://via.placeholder.com/50x50',
+        comment: newComment.newComment,
+      }));
+      setCommentList(newComments);
+    });
   }
-  
+
   useEffect(() => {
-    getData()
-  },[])
-
-  const [commentList, setCommentList] = useState([
-    
-    { username: 'John', profilePic: 'https://via.placeholder.com/50x50', comment: 'Absolutely in support of this bill!' },
-    { username: 'Jane', profilePic: 'https://via.placeholder.com/50x50', comment: 'I\'m kind of hesitant about this one, but I\'ll have to do more research.' },
-    { username: 'Alex', profilePic: 'https://via.placeholder.com/50x50', comment: 'Voting yes immediately.' },
-
-  ]);
-
-  loader === false && (data.map((newComments) => ( 
-    commentList.push({
-      username: newComments.username,
-      profilePic: 'https://via.placeholder.com/50x50',
-      comment: newComments.newComment,
-    })
-  )))
+    getData();
+  }, []);
 
   const [newComment, setNewComment] = useState('');
-  const [username, setusername] = useState("new User")
+  const [username, setusername] = useState(null);
 
-  function refreshComments() {
-    loader === false && (data.map((newComments) => ( 
-      commentList.push({
-        username: newComments.username,
-        profilePic: 'https://via.placeholder.com/50x50',
-        comment: newComments.newComment,
-      })
-    )))
-  }
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setusername(user.displayName);
+      }
+    });
+  }, []);
 
   function addComment(newDataObj){
     console.log("200")
@@ -58,24 +45,11 @@ const Comments = () => {
       alert(err)
       console.error(err)
     })
-    setNewComment('')
   }
-
-  /*const handleAddComment = () => {
-    if (newComment.trim() !== '') {
-      const newCommentList = [...commentList];
-      newCommentList.push({
-        username: 'New User',
-        profilePic: 'https://via.placeholder.com/50x50',
-        comment: newComment,
-      });
-      setCommentList(newCommentList);
-      setNewComment('');
-    }
-  };*/
+  
 
   return (
-    <div  className="comment-section">
+    <div className="comment-section">
       <div className="comment-input-container">
         <textarea
           type="text"
@@ -83,15 +57,20 @@ const Comments = () => {
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
         />
-        <button onClick={() => {
-          setusername('new User')
-          addComment({newComment, username})
+       <button onClick={() => {
+        addComment({newComment, username})
+        setNewComment('')
         }}>Post</button>
+
       </div>
       <div className="comment-list">
         {commentList.map((comment, index) => (
           <div className="comment" key={index}>
-            <img className="comment-profile-pic" src={comment.profilePic} alt="Profile Pic" />
+            <img
+              className="comment-profile-pic"
+              src={comment.profilePic}
+              alt="Profile Pic"
+            />
             <div className="comment-details">
               <div className="comment-username">{comment.username}</div>
               <div className="comment-text">{comment.comment}</div>

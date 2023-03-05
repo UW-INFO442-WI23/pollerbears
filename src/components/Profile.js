@@ -1,34 +1,22 @@
 import React from 'react';
 
-function Profile({ user, setIsProfileOpen }) {
-  const { displayName, email, photoURL } = user;
-  const handleProfileClose = () => {
-    setIsProfileOpen(false);
-  };
+function Profile({ userData, setIsProfileOpen }) {
+  console.log('User:', userData);
+  if (!userData) {
+    console.log('User not found.');
+    return null;
+  }
+
+  const { name, email, photoURL } = userData;
+  console.log('Name:', name);
+  console.log('Email:', email);
+  console.log('Photo URL:', photoURL);
 
   return (
-    <div className="profile-modal-wrapper">
-      <div className="profile-modal">
-        <div className="profile-modal-header">
-          <h2>Profile Information</h2>
-          <button onClick={handleProfileClose}>
-            <i className="fas fa-times"></i>
-          </button>
-        </div>
-        <div className="profile-modal-content">
-          <div className="profile-pic-wrapper">
-            <img
-              className="profile-pic"
-              src={photoURL || "../img/default_profile_pic.png"}
-              alt="User profile"
-            />
-          </div>
-          <div className="profile-info">
-            <p>Name: {displayName}</p>
-            <p>Email: {email}</p>
-          </div>
-        </div>
-      </div>
+    <div>
+      <h1>{name}'s Profile</h1>
+      <p>Email: {email}</p>
+      <img src={photoURL} alt="Profile" />
     </div>
   );
 }
