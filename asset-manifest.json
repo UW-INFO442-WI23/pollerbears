@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pollerbears/static/css/main.957d680e.css",
-    "main.js": "/pollerbears/static/js/main.3af76e06.js",
+    "main.css": "/pollerbears/static/css/main.18c75e3b.css",
+    "main.js": "/pollerbears/static/js/main.3cd334fe.js",
     "index.html": "/pollerbears/index.html",
-    "main.957d680e.css.map": "/pollerbears/static/css/main.957d680e.css.map",
-    "main.3af76e06.js.map": "/pollerbears/static/js/main.3af76e06.js.map"
+    "main.18c75e3b.css.map": "/pollerbears/static/css/main.18c75e3b.css.map",
+    "main.3cd334fe.js.map": "/pollerbears/static/js/main.3cd334fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.957d680e.css",
-    "static/js/main.3af76e06.js"
+    "static/css/main.18c75e3b.css",
+    "static/js/main.3cd334fe.js"
   ]
 }
