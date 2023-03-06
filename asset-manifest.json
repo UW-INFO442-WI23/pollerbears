@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pollerbears/static/css/main.957d680e.css",
-    "main.js": "/pollerbears/static/js/main.24037d59.js",
-    "index.html": "/pollerbears/index.html",
-    "main.957d680e.css.map": "/pollerbears/static/css/main.957d680e.css.map",
-    "main.24037d59.js.map": "/pollerbears/static/js/main.24037d59.js.map"
+    "main.css": "/UW-INFO442-WI23/pollerbears/static/css/main.957d680e.css",
+    "main.js": "/UW-INFO442-WI23/pollerbears/static/js/main.ab7d286b.js",
+    "index.html": "/UW-INFO442-WI23/pollerbears/index.html",
+    "main.957d680e.css.map": "/UW-INFO442-WI23/pollerbears/static/css/main.957d680e.css.map",
+    "main.ab7d286b.js.map": "/UW-INFO442-WI23/pollerbears/static/js/main.ab7d286b.js.map"
   },
   "entrypoints": [
     "static/css/main.957d680e.css",
-    "static/js/main.24037d59.js"
+    "static/js/main.ab7d286b.js"
   ]
 }
