@@ -11,6 +11,7 @@ function UniqueBill(props) {
 
   // We're using the `billId` prop to get the Firestore document reference
   const billRef = firebase.firestore().collection('Bills').doc(billId);
+  const commentsRef = billRef.collection('Comments');
 
   useEffect(() => {
     billRef.get().then((doc) => {
@@ -55,10 +56,9 @@ function UniqueBill(props) {
         <p>{billText}</p>
       </div>
       <Poll billId={billId} pollData={pollData} handlePollClick={handlePollClick} />
-      <Comments billTitle={billTitle} />
+      <Comments billId={billId} commentsRef={commentsRef} />
     </div>
   );
 }
-
 
 export default UniqueBill;

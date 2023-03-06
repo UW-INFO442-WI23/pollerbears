@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import firebase from '../index';
 
-const Comments = () => {
+const Comments = ({ billId }) => {
   const ref = firebase.firestore().collection('Comments');
   const [data, setdata] = useState([]);
   const [loader, setloader] = useState(true);
   const [commentList, setCommentList] = useState([]);
 
   function getData() {
-    ref.onSnapshot((querySnapshot) => {
+    ref.where('billId', '==', billId).onSnapshot((querySnapshot) => {
       const comments = [];
       querySnapshot.forEach((doc) => {
         comments.push(doc.data());
@@ -17,7 +17,7 @@ const Comments = () => {
       setloader(false);
       const newComments = comments.map((newComment) => ({
         username: newComment.username,
-        profilePic: 'https://via.placeholder.com/50x50',
+        profilePic: newComment.photoURL,
         comment: newComment.newComment,
       }));
       setCommentList(newComments);
@@ -30,23 +30,35 @@ const Comments = () => {
 
   const [newComment, setNewComment] = useState('');
   const [username, setusername] = useState(null);
+  const [photoURL, setPhotoURL] = useState(null);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setusername(user.displayName);
+        setPhotoURL(user.photoURL);
       }
     });
   }, []);
 
-  function addComment(newDataObj){
-    console.log("200")
-    ref.doc().set(newDataObj).catch((err) => {
-      alert(err)
-      console.error(err)
-    })
+  function addComment() {
+    if (newComment.trim() !== '') {
+      ref
+        .doc()
+        .set({
+          billId,
+          newComment,
+          username,
+          photoURL,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        })
+        .catch((err) => {
+          alert(err);
+          console.error(err);
+        });
+      setNewComment('');
+    }
   }
-  
 
   return (
     <div className="comment-section">
@@ -57,20 +69,20 @@ const Comments = () => {
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
         />
-       <button onClick={() => {
-        addComment({newComment, username})
-        setNewComment('')
-        }}>Post</button>
-
+        <button onClick={addComment}>Post</button>
       </div>
       <div className="comment-list">
         {commentList.map((comment, index) => (
           <div className="comment" key={index}>
-            <img
-              className="comment-profile-pic"
-              src={comment.profilePic}
-              alt="Profile Pic"
-            />
+            {comment.profilePic ? (
+              <img
+                className="comment-profile-pic"
+                src={comment.profilePic}
+                alt="Profile Pic"
+              />
+            ) : (
+              <div className="default-profile-pic">{comment.username[0]}</div>
+            )}
             <div className="comment-details">
               <div className="comment-username">{comment.username}</div>
               <div className="comment-text">{comment.comment}</div>
