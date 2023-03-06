@@ -56,10 +56,10 @@ export function NavBar({ user, setUser }) {
               src={userData.photoURL}
               alt="user profile"
             />
-            <button onClick={handleSignOut}>Sign Out</button>
+            <button className="sign-in" onClick={handleSignOut}>Sign Out</button>
           </div>
         ) : (
-          <button onClick={handleGoogleSignIn}>Sign in with Google</button>
+          <button className="sign-in" onClick={handleGoogleSignIn}>Sign in with Google</button>
         )}
         <div className="left-head">
           <a className="logo">POLAR</a>

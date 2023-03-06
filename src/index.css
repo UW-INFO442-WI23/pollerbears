@@ -318,6 +318,11 @@ footer {
   color: #EE1F44;
 }
 
+.about iframe {
+  width:420px; 
+  height: 315px;
+}
+
 /* Comments Styling */
 .comment-section {
   max-width: 80%;
@@ -470,6 +475,24 @@ button:hover {
 
 /* Size Styling */
 @media screen and (max-width: 767px) {
+  /*Home*/
+  .logo {
+    font-size: 36px;
+  }
+
+  .slogan {
+    display: none;
+  }
+
+  .sign-in {
+    width: 70px;
+    font-size: 8px;
+  }
+
+  .homepageHeading {
+    font-size: 30px;
+  }
+
   .nav-ul {
     display: none;
     flex-direction: column;
@@ -483,6 +506,78 @@ button:hover {
   .hamburger {
     display: flex;
     padding-right: 10px;
+  }
+
+  .card {
+    width: auto;
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .filter-container {
+    display: none;
+  }
+
+  .footer-icon {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  /*Unique Bill*/
+  .uniqueBillHeader {
+    height: auto;
+    width: auto;
+  }
+
+  .uniqueBillHeader button {
+    width: 55px;
+  }
+
+  .uniqueBillHeader h2 {
+    font-size: 24px;
+  }
+
+  .uniqueBillHeader p {
+    font-size: 12px;
+  }
+  
+  
+
+  /*About*/
+
+  .about h1 {
+    font-size: 30px;
+  }
+
+  .about h2 {
+    font-size: 20px;
+  }
+
+  .about p {
+    font-size: 18px;
+  }
+
+  .about iframe {
+    height: 200px;
+    width: auto;
+  }
+
+  /*Profile*/
+  .profile-container {
+    height: auto;
+    width: auto;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-bio {
+    font-size: 15px;
   }
 }
 @media (max-width: 1300px) {
