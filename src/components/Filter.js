@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Card from './Cards';
-
 function Filter(props) {
-  const [searchTerm, setSearchTerm] = useState('');
   const [showCheckboxes, setShowCheckboxes] = useState(true);
   const [showBillTypeDropdown, setShowBillTypeDropdown] = useState(false);
+
+  const { onFilterChange } = props;
 
   const toggleCheckboxes = () => {
     setShowCheckboxes(!showCheckboxes);
@@ -17,52 +16,58 @@ function Filter(props) {
     setShowBillTypeDropdown(!showBillTypeDropdown);
   };
 
+  const handleFilterChange = (event) => {
+    const { name, checked } = event.target;
+    console.log("handleFilterChange: ", name, checked);
+    onFilterChange(event); // pass event object to parent component
+  };
+
   return (
     <div className="filter-container">
-        <FontAwesomeIcon icon={faFilter} className="icon icon-filter" />
-        <div className='filter-heading'>
-            Filter
-        </div>
-      
-        <div className="checkbox-container">
-            <label>
-            <input type="checkbox"/>
-            Trending
-          </label>
-          <label>
-            <input type="checkbox"/>
-            Favorites
-          </label>
-          <label>
-            <input type="checkbox"/>
-            Community
-          </label>
-          <label onClick={toggleBillTypeDropdown}>
-            Bill Type
-            <span className="arrow-icon">{showBillTypeDropdown ? '▲' : '▼'}</span>
-          </label>
-          {showBillTypeDropdown && (
-            <div className="bill-type-dropdown">
-              <label>
-                <input type="checkbox"/>
-                Labor
-              </label>
-              <label>
-                <input type="checkbox"/>
-                Tax
-              </label>
-              <label>
-                <input type="checkbox"/>
-                Ordinance
-              </label>
-              <label>
-                <input type="checkbox"/>
-                Motion
-              </label>
-            </div>
-          )}
+      <FontAwesomeIcon icon={faFilter} className="icon icon-filter" />
+      <div className='filter-heading'>
+        Filter
+      </div>
 
-        </div>
+      <div className="checkbox-container">
+        <label>
+          <input type="checkbox" name="trending" onChange={handleFilterChange} />
+          Trending
+        </label>
+        <label>
+          <input type="checkbox" name="favorites" onChange={handleFilterChange} />
+          Favorites
+        </label>
+        <label>
+          <input type="checkbox" name="community" onChange={handleFilterChange} />
+          Community
+        </label>
+        <label onClick={toggleBillTypeDropdown}>
+          Bill Type
+          <span className="arrow-icon">{showBillTypeDropdown ? '▲' : '▼'}</span>
+        </label>
+        {showBillTypeDropdown && (
+          <div className="bill-type-dropdown">
+            <label>
+              <input type="checkbox" name="labor" onChange={handleFilterChange} />
+              Labor
+            </label>
+            <label>
+              <input type="checkbox" name="tax" onChange={handleFilterChange} />
+              Tax
+            </label>
+            <label>
+              <input type="checkbox" name="ordinance" onChange={handleFilterChange} />
+              Ordinance
+            </label>
+            <label>
+              <input type="checkbox" name="motion" onChange={handleFilterChange} />
+              Motion
+            </label>
+          </div>
+        )}
+
+      </div>
     </div>
   );
 }
