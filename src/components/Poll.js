@@ -79,7 +79,8 @@ function Poll(props) {
         likes2: newStringValue
       })
       .then(() => {
-        setYesVotes(check.length);
+        const count = newStringValue.split(',')
+        setYesVotes(count.length);
         console.log('String field updated successfully');
       })
       .catch((error) => {
@@ -144,7 +145,8 @@ function Poll(props) {
         dislikes2: newStringValue
       })
       .then(() => {
-        setNoVotes(check.length);
+        const count = newStringValue.split(',')
+        setNoVotes(count.length);
         console.log('String field updated successfully');
       })
       .catch((error) => {
