@@ -1,24 +1,21 @@
 # Polar
 
+The published Polar site can be viewed here: https://uw-info442-wi23.github.io/pollerbears/
 ## Our Mission 
 
-The goal of this application is to inform and foster a culture of curiosity for King County, Washington residents about new bills to invite civic action and higher voter turnout. It will include translated, readable versions of complex bills into Layman's terms for the average reader to understand. This will lead to increased awareness of and engagement with current issues at the County level.
+The goal of this application is to inform and foster a culture of curiosity for King County, Washington residents about bills to invite civic action and higher voter turnout. It will include translated, readable versions of complex bills into Layman's terms for the average reader to understand. This will lead to increased awareness of and engagement with current issues at the County level.
 
-This solution exists specifically to address the United Nations 16th Sustainable Devleopement Goal of Peace, Justice, and Strong Institutions.
+This solution exists specifically to address the United Nations 16th Sustainable Devleopement Goal of Peace, Justice, and Strong Institutions. Voting is a way many individuals have to express themselves and their opinion in local politics, which affect
+all residents of King County in big and small ways. Polar exists to shorten the understanding challenge between regular King County residents and expressing their voice in an educated and thoughtful way.
 
 ## Features
 
 * Home Page of all King County Bills 
-* Realtime poll for each bill, described in Layman's terms 
+* Summary for each bill, described in Layman's terms and generated using ChatGPT AI
 * Visualization of vote distribution
 * Comment section for each bill for discourse around the bill
-* King County resident user verification
-* Links to King County government website to review bills in detail 
-
-## GitHub Pages
-
-The published site can be viewed here: [insert later]
-
+* Google account sign in and profile population
+* About Page with brief information on Polar's mission and the importance of voting
 ## Group Members
 
 * Grackie Jiang
@@ -27,11 +24,7 @@ The published site can be viewed here: [insert later]
 * Jonathan Prasetyo
 * Iverson Li
 
-# Development Instructions
-
-add more here later 
-
-# Getting Started with Create React App
+# React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -39,69 +32,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
+
+Installs npm in your directory.
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm run deploy`
+Deploys published app.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 # References
 
-Government bills sourced from King County website
+Government bills sourced from King County website: https://kingcounty.gov/
+
