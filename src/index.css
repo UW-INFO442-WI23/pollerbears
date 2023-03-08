@@ -492,6 +492,10 @@ button:hover {
   .homepageHeading {
     font-size: 30px;
   }
+  .polar-profile{
+      width: 40%;
+      height: 4rem;
+  }
 
   .nav-ul {
     display: none;

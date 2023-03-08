@@ -48,7 +48,7 @@ function HomeScreen(props) {
   
   const isVisible = (bill) => {
     const filterKeys = Object.keys(filters);
-    for (let i = 0; i < filterKeys.length; i++) {
+    for (let i = 0; i < filterKeys.length; i+=1) {
       const category = filterKeys[i];
       if (filters[category] && !bill[category]) {
         return false;
