@@ -81,7 +81,7 @@ const Comments = ({ billId }) => {
                 alt="Profile Pic"
               />
             ) : (
-              <div className="default-profile-pic">{comment.username[0]}</div>
+              <div className="default-profile-pic">{comment.profilePic}</div>
             )}
             <div className="comment-details">
               <div className="comment-username">{comment.username}</div>
