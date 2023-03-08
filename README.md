@@ -26,7 +26,7 @@ all residents of King County in big and small ways. Polar exists to shorten the 
 
 # React App
 
-This project was made with with [Create React App](https://github.com/facebook/create-react-app).
+This project was made with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
