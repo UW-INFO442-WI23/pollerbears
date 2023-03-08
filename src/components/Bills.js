@@ -6,7 +6,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import '../index.css';
 
 
-function Bills() {
+function Bills({userData}) {
     const [showUniqueBill, setShowUniqueBill] = useState(false);
     const [billTitle, setBillTitle] = useState('');
     const [billText, setBillText] = useState('');
@@ -69,7 +69,7 @@ function Bills() {
                 {loader === false && (data.map((bill) => {
                     if (bill.id === selectedBill) { // filter bills by selected bill id
                     return (
-                        <UniqueBill key={bill.id} billId={bill.id} billTitle={bill.title} billText={bill.bill} handleBackClick={handleBackClick} />
+                        <UniqueBill key={bill.id} billId={bill.id} billTitle={bill.title} billText={bill.bill} userData={userData} handleBackClick={handleBackClick} />
                     );
                     }
                 }))}

@@ -3,7 +3,7 @@ import Bills from './components/Bills';
 import About from './components/About';
 import Profile from './components/Profile';
 import { NavBar, Footer } from './components/Nav';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
     <Router>
       <NavBar user={userData} setUser={setUser} />
       <Routes>
-        <Route exact path='/' element={<Bills/>}/>
+        <Route exact path='/' element={<Bills userData={userData}/>}/>
         <Route exact path='/About' element={<About/>}/>
         <Route exact path='/Profile' element={<Profile userData={userData} setIsProfileOpen={setIsProfileOpen} />} />
       </Routes>

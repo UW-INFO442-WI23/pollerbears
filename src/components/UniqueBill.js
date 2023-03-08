@@ -6,7 +6,7 @@ import Poll from './Poll';
 import firebase from '../index';
 
 function UniqueBill(props) {
-  const { billId, billTitle, billText, handleBackClick } = props;
+  const { billId, billTitle, billText, userData, handleBackClick } = props;
   const [pollData, setPollData] = useState({ yes: 0, no: 0 });
 
   // We're using the `billId` prop to get the Firestore document reference
@@ -55,7 +55,7 @@ function UniqueBill(props) {
         <h2>{billTitle}</h2>
         <p>{billText}</p>
       </div>
-      <Poll billId={billId} pollData={pollData} handlePollClick={handlePollClick} />
+      <Poll billId={billId} pollData={pollData} userData={userData} handlePollClick={handlePollClick} />
       <Comments billId={billId} commentsRef={commentsRef} />
     </div>
   );
