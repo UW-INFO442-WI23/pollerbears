@@ -15,6 +15,7 @@ This document outlines testing protocol for Polar, including known bugs and work
 ## Filtering
 * If a user clicks on certain filters, the list of bills will react accordingly to the filter. 
 * __Known bug:__ Not every filter will result in a change, as there are only five bills in the database so far, however we wanted to make sure the filters were there and ready to be implemented for future bills that they could apply to. As a workaround, please click the "Favorites" filter to see how the filtering would work.
+*__Known bug:__ In the mobile, smaller view of our application, filtering is not part of the home page. Since this is not a P0 functionality, we excluded it from the mobile view for more simplicity. In the future for development next steps, we would implement as it became more necessary with more bills. As a workaround, please select the bill manually from the list instead of sorting with filter.
 
 ## App Navigation
 * The "Home" button at the top right should redirect to the home page.
