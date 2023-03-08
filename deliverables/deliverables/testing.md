@@ -1,6 +1,6 @@
 # Testing Protocol
 
-This document outlines testing protocol for Polar, including known bugs and workarounds. The features we have outlined testing protocol for are voting for each bill, commenting, filtering, app navigation, Profile, and About page.
+This document outlines testing protocol for Polar, including known bugs and workarounds. The features we have outlined testing protocol for are voting for each bill, commenting, filtering, app navigation, Profile which includes sample credentials for signing in, and About page.
 
 ## Voting
 * If user is not signed in, clicking the voting buttons should result in no changes.
@@ -22,6 +22,7 @@ This document outlines testing protocol for Polar, including known bugs and work
 * __Known bug__: The "Home" button on the individual bill page does not redirect to the home page list of bills. That's because on the bill page, there is an arrow above the bill summary that brings the user back to the bill page. As a workaround, please use the arrow to navigate back to the home page from the bill page.
 
 ## Profile
+* __Sample Credentials for Sign in:__ Email: polarapptestuser@gmail.com Password: polar123!
 * The top left button that says "Sign In with Google" should prompt the user to log in with their Google Account through a pop up window.
 * After a user has successfully logged in, their profile photo will appear in the top left (same as their Google image).
 * After a user successfully logged in, a "Profile" navigation button will appear in the top left, which will be populated with the Google profile information.
