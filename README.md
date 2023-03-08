@@ -1,6 +1,6 @@
 # Polar
 
-The published Polar site can be viewed here: https://uw-info442-wi23.github.io/pollerbears/
+The [published Polar site can be viewed here.](https://uw-info442-wi23.github.io/pollerbears/).
 ## Our Mission 
 
 The goal of this application is to inform and foster a culture of curiosity for King County, Washington residents about bills to invite civic action and higher voter turnout. It will include translated, readable versions of complex bills into Layman's terms for the average reader to understand. This will lead to increased awareness of and engagement with current issues at the County level.
@@ -26,7 +26,7 @@ all residents of King County in big and small ways. Polar exists to shorten the 
 
 # React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made with with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -46,5 +46,5 @@ Deploys published app.
 
 # References
 
-Government bills sourced from King County website: https://kingcounty.gov/
+Government bills sourced from [King County website.](https://kingcounty.gov/).
 
