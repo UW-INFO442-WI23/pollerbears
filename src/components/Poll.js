@@ -184,31 +184,5 @@ let totalVotes = yesVotes + noVotes
     </div>
   );
 }
- // Legacy code
-  /*const handleYesClick = () => {
-    const db = firebase.firestore();
-    const billRef = db.collection("Bills").doc(billId);
-
-    billRef.doc().set({
-      likes2: userData.email,
-    }).then(() => {
-      setYesVotes(billRef.likes2.count());
-    }).catch((error) => {
-      console.error("Error updating document: ", error);
-    });
-  };*/
-
-  /*const handleNoClick = () => {
-    const db = firebase.firestore();
-    const billRef = db.collection("Bills").doc(billId);
-
-    billRef.doc().set({
-      dislikes2: userData.email,
-    }).then(() => {
-      setNoVotes(billRef.dislikes2.count());
-    }).catch((error) => {
-      console.error("Error updating document: ", error);
-    });
-  };*/
 
 export default Poll;
